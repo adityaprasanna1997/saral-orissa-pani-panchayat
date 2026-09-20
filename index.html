@@ -50,6 +50,11 @@ header{position:sticky;top:0;z-index:40;background:rgba(250,249,247,.96);backdro
 
 /* chapters + sections */
 .chapter{font-family:system-ui,Arial,sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--accent);margin:32px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent-soft)}
+.chapsec{margin-top:28px}
+.chapsec .col.left{background:#f4e1e1;border-color:#e7cccc}
+.chapsec .col.left:hover{background:#efd6d6}
+.chaptitle{font-family:system-ui,Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:.6px;text-transform:uppercase;color:var(--accent);margin:2px 0}
+.chapptitle{text-transform:uppercase;font-size:13px;letter-spacing:.5px}
 .sec{margin:14px 0}
 .sec.target .col.left{box-shadow:0 0 0 2px var(--accent)}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
@@ -264,7 +269,7 @@ And whereas it is necessary in the State of Orissa to enact a law for farmer's p
  plain:`<p>The Orissa State Legislature enacts as follows:</p>`,
  faqs:[]},
 
-{type:"chapter",label:"Chapter I — Preliminary"},
+{type:"chapter",o:"Chapter I. Preliminary",p:"Preliminary"},
 {type:"section",num:"1",title:"Name, extent and commencement",id:"s1",
  existing:`(1) This Act may be called the Orissa Pani Panchayat Act, 2002.
 (2) It extends to the whole of the State of Orissa.
@@ -337,7 +342,7 @@ Explanation: (i) where the recorded land holder is dead, his legal heirs will be
 <p>(2) Words used but not defined in this Act have the meaning given to them in the Orissa Irrigation Act, 1959 and the Orissa General Clauses Act, 1937.</p>`,
  faqs:["2.1","2.2","2.3","2.4","2.5","2.6","2.7","2.8"]},
 
-{type:"chapter",label:"Chapter II — Setting up the Farmers' Organisations"},
+{type:"chapter",o:"Chapter II. Farmer's Organisation",p:"Setting up the Farmers' Organisations"},
 {type:"section",num:"3",title:"Marking out and setting up a Pani Panchayat",id:"s3",
  existing:`(1) The Additional Chief Engineer or Chief Construction Engineer, as the case may be, may, by notification and in accordance with the rules made under this Act, delineate every commanded area under each irrigation system on a hydraulic basis, ordinarily between 300 and 600 hectares, which may be considered administratively viable, and declare it to be the area of a Pani Panchayat for the purposes of this Act.
 Provided that, in respect of the commanded area under lift irrigation systems, the entire commanded area may, as far as possible, form a single area of Pani Panchayat and may be notified as such by the concerned Executive Engineer of the Orissa Lift Irrigation Corporation.
@@ -581,7 +586,7 @@ Provided that a person shall not be deemed to have any interest in such contract
 <p>(3) A person elected under section 15(2) holds office only for the rest of the term that the ordinary election would have run.</p>`,
  faqs:["15.1","15.2","15.3"]},
 
-{type:"chapter",label:"Chapter III — What the organisations are for, and what they do"},
+{type:"chapter",o:"Chapter III. Objects and functions of the Farmers' Organisations",p:"What the organisations are for, and what they do"},
 {type:"section",num:"16",title:"Purpose",id:"s16",
  existing:`The objects of the Farmer's Organisation shall be to promote and secure the distribution of water among its users, the adequate maintenance of the irrigation system, and the efficient and economical utilisation of water to optimise agricultural production; to protect the environment; and to ensure ecological balance by involving the farmers and inculcating a sense of ownership of the irrigation system, in accordance with the water budget and the operational plan.`,
  gist:`States the purpose of a Farmer's Organisation: to share water, maintain the system, use water well, and protect the environment.`,
@@ -740,7 +745,7 @@ Explanation: In the case of European Community aided Minor Irrigation (Flow) Pro
 <p>(2) The competent authority must perform the duties prescribed in the rules.</p>`,
  faqs:["21.1"]},
 
-{type:"chapter",label:"Chapter IV — Funds"},
+{type:"chapter",o:"Chapter IV. Resources",p:"Funds"},
 {type:"section",num:"22",title:"Where the organisation's funds come from",id:"s22",
  existing:`The funds of the Farmer's Organisation shall consist of the following:
 (a) funds as may be granted by the State and Central Government for the development of the area of operation;
@@ -757,7 +762,7 @@ Explanation: In the case of European Community aided Minor Irrigation (Flow) Pro
 <li>money from any other source, including the MLA and MP Local Area Development Funds.</li></ol>`,
  faqs:["22.1"]},
 
-{type:"chapter",label:"Chapter V — Offences and punishments"},
+{type:"chapter",o:"Chapter V. Offences and penalties",p:"Offences and punishments"},
 {type:"section",num:"23",title:"Offences and punishments",id:"s23",
  existing:`Whoever, without any lawful authority:
 (a) damages, alters, enlarges or obstructs any irrigation system;
@@ -793,7 +798,7 @@ Provided that no person shall be prosecuted and punished for the same offence mo
 <p>(2) Once that sum is paid, the person, if in custody, is released. No further action is taken against them for the offence so compounded.</p>`,
  faqs:["25.1"]},
 
-{type:"chapter",label:"Chapter VI — Settling disputes"},
+{type:"chapter",o:"Chapter VI. Settlement of disputes",p:"Settling disputes"},
 {type:"section",num:"26",title:"Settling disputes",id:"s26",
  existing:`(1) Any dispute or difference touching the constitution, management, powers or functions of a Farmer's Organisation arising between members shall be settled by the Executive Committee of the concerned Farmer's Organisation.
 (2) Any such dispute or difference arising between a member and the Executive Committee of a Pani Panchayat, or between two or more Pani Panchayats, shall be settled by the Executive Committee of the Distributary Committee.
@@ -828,7 +833,7 @@ Provided that no person shall be prosecuted and punished for the same offence mo
 <p>(3) An appeal under section 27(1) or 27(2) must be filed within fifteen days. The fifteen days run from the date the decision or order is communicated to the aggrieved person.</p>`,
  faqs:["27.1"]},
 
-{type:"chapter",label:"Chapter VII — Other matters"},
+{type:"chapter",o:"Chapter VII. Miscellaneous",p:"Other matters"},
 {type:"section",num:"28",title:"Records the organisation must keep",id:"s28",
  existing:`(1) Every Farmer's Organisation shall keep at its office the following accounts, records and documents:
 (a) an up-to-date copy of this Act and the rules made thereunder;
@@ -1033,7 +1038,29 @@ const OTITLES={
 
 ACT.forEach(item=>{
   if(item.type==="chapter"){
-    const h=document.createElement('div');h.className='chapter';h.textContent=item.label;actEl.appendChild(h);return;
+    if(item.o){
+      const cs=document.createElement('section');cs.className='sec chapsec';
+      cs.innerHTML=`
+        <div class="grid">
+          <div class="col left" data-role="toggle">
+            <div class="lbl">The Act as in force</div>
+            <div class="chaptitle">${esc(item.o)}</div>
+            <div class="tapline"><span class="chev">›</span> Tap for the plain language name</div>
+          </div>
+          <div class="col right">
+            <div class="gistbox">
+              <div class="lbl">In plain language</div>
+              <div class="ptitle chapptitle">${esc(item.p)}</div>
+            </div>
+          </div>
+        </div>`;
+      actEl.appendChild(cs);
+      const cl=cs.querySelector('[data-role=toggle]');
+      cl.addEventListener('click',()=>{ if(window.getSelection && String(window.getSelection()).trim().length>0)return; cs.classList.toggle('open'); });
+    }else{
+      const h=document.createElement('div');h.className='chapter';h.textContent=item.label;actEl.appendChild(h);
+    }
+    return;
   }
   const sec=document.createElement('section');sec.className='sec';sec.id=item.id;
   const otitle=OTITLES[item.id]||item.title;
